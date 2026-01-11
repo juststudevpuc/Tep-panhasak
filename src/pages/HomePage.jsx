@@ -150,7 +150,7 @@ export default function HomePage() {
                 label="Telegram"
               />
               <SocialLink
-                href="#"
+                href="http://linkedin.com/in/tep-panhasak-73420b390"
                 icon={<Linkedin size={10} color="#0A66C2" />}
                 label="Linkedin"
               />

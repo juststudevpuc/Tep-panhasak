@@ -123,7 +123,7 @@ export default function ContactPage() {
           label="Telegram"
         />
         <SocialLink
-          href="#"
+          href="http://linkedin.com/in/tep-panhasak-73420b390"
           icon={<Linkedin size={30} color="#0A66C2" />}
           label="Linkedin"
         />
