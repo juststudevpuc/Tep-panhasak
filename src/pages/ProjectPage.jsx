@@ -17,7 +17,7 @@ const ProjectCard = ({
 
   return (
     <motion.div whileHover={{ y: -5 }} className="h-full">
-      <Card className="group relative overflow-hidden border border-slate-200/60 dark:border-white/5 rounded-2xl bg-white dark:bg-[#111112] shadow-sm transition-all duration-500 hover:shadow-2xl dark:hover:shadow-blue-500/10 flex flex-col h-full">
+      <Card className="group relative overflow-hidden border border-slate-200/60 dark:border-white/5 rounded-2xl bg-gray-100 dark:bg-[#111112] shadow-sm transition-all duration-500 hover:shadow-2xl dark:hover:shadow-blue-500/10 flex flex-col h-full">
         {/* Ambient Glow Background (Hidden in light mode, subtle in dark) */}
         <div
           className="absolute -top-24 -right-24 w-48 h-48 blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none"
@@ -303,7 +303,7 @@ const StarryBackground = () => {
       animate={{ opacity: 1, y: 0 }}
       // 3. Make it smooth. 0.8s looks great for page loads.
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="min-h-screen bg-[#fafafa] dark:bg-[#0a0a0b] transition-colors duration-500 pb-24"
+      className="min-h-screen bg-gray-200 dark:bg-[#0a0a0b] transition-colors duration-500 pb-24"
     >
       <StarryBackground/>
       <div className="mx-auto max-w-7xl px-8 lg:px-12 py-20">
@@ -313,7 +313,7 @@ const StarryBackground = () => {
           </p>
           <h1 className="text-4xl lg:text-6xl font-black tracking-tighter text-slate-900 dark:text-white uppercase">
             Project{" "}
-            <span className="text-slate-300 dark:text-zinc-300 font-semibold italic">
+            <span className="text-slate-500 dark:text-zinc-500 font-semibold italic">
               Archives
             </span>
           </h1>

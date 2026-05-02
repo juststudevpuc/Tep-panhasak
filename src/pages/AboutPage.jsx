@@ -42,7 +42,7 @@ export default function AboutPage() {
   return (
     // Updated: Soft background colors for both modes
 
-    <div className="min-h-screen bg-[#fafafa] dark:bg-[#0a0a0b] transition-colors duration-500 pb-24">
+    <div className="min-h-screen bg-gray-200 dark:bg-[#0a0a0b] transition-colors duration-500 pb-24">
       <StarryBackground />
       <div className="mx-auto max-w-5xl px-8 py-16 lg:py-24">
         {/* Header - Balanced Border Color */}

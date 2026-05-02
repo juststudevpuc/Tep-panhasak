@@ -30,9 +30,9 @@ export const MainLayout = () => {
 
   return (
     // 1. Matte Backgrounds and Flex layout to push the footer to the bottom
-    <div className="min-h-screen flex flex-col bg-[#fafafa] dark:bg-[#0a0a0b] text-slate-900 dark:text-slate-50 antialiased transition-colors duration-500">
+    <div className="min-h-screen flex flex-col bg-gray-200 dark:bg-[#0a0a0b] text-slate-900 dark:text-slate-50 antialiased transition-colors duration-500">
       {/* 2. Glassmorphism Sticky Header */}
-      <header className="sticky top-0 z-50 bg-[#fafafa]/80 dark:bg-[#0a0a0b]/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-white/5 transition-colors duration-500">
+      <header className="sticky top-0 z-50 bg-gray-300 dark:bg-[#0a0a0b]/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-white/5 transition-colors duration-500">
         <nav
           aria-label="Global"
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -154,7 +154,7 @@ export const MainLayout = () => {
       </main>
 
       {/* 4. Footer - Cleaned up and integrated border */}
-      <footer className="w-full bg-[#fafafa] dark:bg-[#0a0a0b] py-12 border-t border-slate-200/50 dark:border-white/5 transition-colors duration-500">
+      <footer className="w-full bg-gray-300 dark:bg-[#0a0a0b] py-12 border-t border-slate-200/50 dark:border-white/5 transition-colors duration-500">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center gap-6 text-[10px] uppercase tracking-[0.3em] text-slate-400 dark:text-slate-500">
           <div className="flex flex-wrap justify-center gap-8 font-bold">
             <Link

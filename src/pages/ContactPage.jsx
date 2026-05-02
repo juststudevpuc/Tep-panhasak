@@ -80,7 +80,7 @@ export default function ContactPage() {
       animate={{ opacity: 1, y: 0 }}
       // 3. Make it smooth. 0.8s looks great for page loads.
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="min-h-screen bg-[#fafafa] dark:bg-[#0a0a0b] transition-colors duration-500 pb-24"
+      className="min-h-screen bg-gray-100 dark:bg-[#0a0a0b] transition-colors duration-500 pb-24"
     >
       <StarryBackground />
       <div className="mx-auto max-w-5xl px-8 py-16 lg:py-24">

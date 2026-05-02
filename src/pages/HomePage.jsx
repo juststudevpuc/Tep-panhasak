@@ -113,7 +113,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] dark:bg-[#0f0f11] selection:bg-slate-900 dark:selection:bg-slate-100 selection:text-white dark:selection:text-slate-900 transition-colors duration-500">
+    <div className="min-h-screen bg-gray-200 dark:bg-[#0f0f11] selection:bg-slate-900 dark:selection:bg-slate-100 selection:text-white dark:selection:text-slate-900 transition-colors duration-500">
       {/* Hero Section */}
       <section className="relative mx-auto max-w-7xl px-8 py-16 lg:py-24">
         {/* Starry Background (Only visible in dark mode) */}
@@ -205,7 +205,7 @@ export default function HomePage() {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="bg-white dark:bg-[#0f0f11] py-32 transition-colors duration-500">
+      <section className="bg-gray-200 dark:bg-[#0f0f11] py-32 transition-colors duration-500">
         <div className="mx-auto max-w-7xl px-8 lg:px-12">
           <StarryBackground />
 

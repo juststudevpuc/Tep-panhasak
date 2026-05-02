@@ -131,7 +131,7 @@ export default function SkillPage() {
       animate={{ opacity: 1, y: 0 }}
       // 3. Make it smooth. 0.8s looks great for page loads.
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="min-h-screen bg-[#fafafa] dark:bg-[#0a0a0b] transition-colors duration-500 pb-24"
+      className="min-h-screen bg-gray-200 dark:bg-[#0a0a0b] transition-colors duration-500 pb-24"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12 py-20">
         {/* Header */}
