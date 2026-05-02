@@ -6,20 +6,23 @@ import AboutPage from "./pages/AboutPage";
 import SkillPage from "./pages/SkillPage";
 import ProjectPage from "./pages/ProjectPage";
 import ContactPage from "./pages/ContactPage";
+import { ThemeProvider } from "./context/ThemeContext";
 
 export const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="homePage" element={<HomePage />} />
-          <Route path="aboutPage" element={<AboutPage />} />
-          <Route path="skillPage" element={<SkillPage />} />
-          <Route path="projectPage" element={<ProjectPage />} />
-          <Route path="contactPage" element={<ContactPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="homePage" element={<HomePage />} />
+            <Route path="aboutPage" element={<AboutPage />} />
+            <Route path="skillPage" element={<SkillPage />} />
+            <Route path="projectPage" element={<ProjectPage />} />
+            <Route path="contactPage" element={<ContactPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };

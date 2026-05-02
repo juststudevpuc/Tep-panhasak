@@ -23,11 +23,9 @@ import {
   FaBrain,
   FaHandsHelping,
 } from "react-icons/fa";
-
 import { motion } from "framer-motion";
 
 export default function SkillPage() {
-  // 1. Define skills with their official brand colors
   const skills_front = [
     { name: "HTML", level: "70%", icon: <SiHtml5 color="#E34F26" /> },
     { name: "CSS", level: "60%", icon: <SiCss3 color="#1572B6" /> },
@@ -65,68 +63,90 @@ export default function SkillPage() {
       icon: <FaLightbulb color="#FFB100" />,
     },
     { name: "Adaptability", level: "80%", icon: <FaSyncAlt color="#00BCD4" /> },
-    {
-      name: "Teamwork",
-
-      level: "85%",
-
-      icon: <FaUsers size={45} color="#50E3C2" />,
-    },
-
+    { name: "Teamwork", level: "85%", icon: <FaUsers color="#50E3C2" /> },
     {
       name: "Time Management",
-
       level: "70%",
-
-      icon: <FaClock size={45} color="#9013FE" />,
+      icon: <FaClock color="#9013FE" />,
     },
-
     {
       name: "Teaching & Leadership",
-
       level: "80%",
-
-      icon: <FaChalkboardTeacher size={45} color="#D0021B" />,
+      icon: <FaChalkboardTeacher color="#D0021B" />,
     },
-
     {
       name: "Critical Thinking",
-
       level: "75%",
-
-      icon: <FaBrain size={45} color="#2EC866" />,
+      icon: <FaBrain color="#2EC866" />,
     },
-
     {
       name: "Teamwork (Collaboration)",
-
       level: "85%",
-
-      icon: <FaHandsHelping size={45} color="#FF9800" />,
+      icon: <FaHandsHelping color="#FF9800" />,
     },
   ];
 
+  // --- Custom Starry Background Component ---
+  const StarryBackground = () => {
+    // Generate random stars on mount
+    const stars = Array.from({ length: 50 }).map((_, i) => ({
+      id: i,
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      size: Math.random() * 2 + 1, // 1px to 3px
+      delay: Math.random() * 3,
+      duration: Math.random() * 3 + 2, // 2s to 5s twinkle
+    }));
+
+    return (
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden dark:block z-0">
+        {stars.map((star) => (
+          <motion.div
+            key={star.id}
+            className="absolute bg-white rounded-full"
+            style={{
+              top: star.top,
+              left: star.left,
+              width: star.size,
+              height: star.size,
+            }}
+            animate={{ opacity: [0.1, 0.7, 0.1] }}
+            transition={{
+              duration: star.duration,
+              repeat: Infinity,
+              delay: star.delay,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+      </div>
+    );
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 1 }}
-      className="min-h-screen bg-white text-slate-700 pb-32"
+      // 1. Start invisible and slightly higher up (-50px)
+      initial={{ opacity: 0, y: 50 }}
+      // 2. Fade in and slide down to its normal resting position (0px)
+      animate={{ opacity: 1, y: 0 }}
+      // 3. Make it smooth. 0.8s looks great for page loads.
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="min-h-screen bg-[#fafafa] dark:bg-[#0a0a0b] transition-colors duration-500 pb-24"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12 py-20">
         {/* Header */}
         <div className="space-y-4 mb-20">
-          <h2 className="text-[10px] uppercase tracking-[0.5em] text-slate-400 font-bold">
+          <h2 className="text-[10px] uppercase tracking-[0.5em] text-slate-400 dark:text-slate-500 font-bold">
             Capabilities
           </h2>
-          <h1 className="text-4xl lg:text-6xl font-bold tracking-tighter text-slate-900 uppercase">
+          <h1 className="text-4xl lg:text-6xl font-bold tracking-tighter text-slate-900 dark:text-white uppercase">
             Technical{" "}
-            <span className="text-slate-400 font-light italic">
+            <span className="text-slate-400 dark:text-slate-600 font-light italic">
               Proficiency
             </span>
           </h1>
         </div>
-
+        <StarryBackground />
         {/* Sections */}
         <div className="space-y-24">
           <SkillSection
@@ -153,9 +173,10 @@ export default function SkillPage() {
 function SkillSection({ title, icon, data }) {
   return (
     <div className="space-y-10">
-      <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
-        <span className="text-slate-900">{icon}</span>
-        <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-900">
+      {/* Updated: Border colors for dark mode */}
+      <div className="flex items-center gap-3 border-b border-slate-100 dark:border-white/5 pb-4">
+        <span className="text-slate-900 dark:text-slate-400">{icon}</span>
+        <h2 className="text-sm font-bold uppercase tracking-[0.2em] text-slate-900 dark:text-slate-100">
           {title}
         </h2>
       </div>
@@ -164,36 +185,40 @@ function SkillSection({ title, icon, data }) {
         {data.map((skill) => (
           <Card
             key={skill.name}
-            className="group relative border border-slate-100 rounded-none bg-white p-8 min-h-[320px] flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-500"
+            // Updated: Card colors, borders, and hover effects for dark mode
+            className="group relative border border-slate-100 dark:border-white/5 rounded-none bg-white dark:bg-[#111] p-8 min-h-[320px] flex flex-col justify-between shadow-sm hover:shadow-xl dark:hover:bg-[#161616] transition-all duration-500"
           >
             <div className="flex justify-between items-start">
-              {/* Logo with original color always visible */}
-              <div className="text-4xl transform transition-transform duration-500 group-hover:scale-110">
+              {/* Logo: Added a subtle drop-shadow filter in dark mode to make colors pop */}
+              <div className="text-4xl transform transition-transform duration-500 group-hover:scale-110 filter dark:drop-shadow-[0_0_8px_rgba(255,255,255,0.1)]">
                 {skill.icon}
               </div>
               <ArrowUpRight
                 size={18}
-                className="text-slate-200 group-hover:text-slate-900 transition-colors"
+                className="text-slate-200 dark:text-slate-700 group-hover:text-slate-900 dark:group-hover:text-white transition-colors"
               />
             </div>
 
             <div className="mt-8">
-              <h3 className="text-base font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
                 {skill.name}
               </h3>
-              <p className="text-[10px] uppercase tracking-widest text-slate-400 mt-1">
+              <p className="text-[10px] uppercase tracking-widest text-slate-400 dark:text-slate-500 mt-1">
                 Professional Level
               </p>
             </div>
 
             <div className="space-y-4 pt-8">
-              <div className="flex justify-between text-[12px] font-bold text-slate-400 uppercase tracking-tighter">
+              <div className="flex justify-between text-[12px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-tighter">
                 <span>Mastery</span>
-                <span className="text-slate-900">{skill.level}</span>
+                <span className="text-slate-900 dark:text-slate-200">
+                  {skill.level}
+                </span>
               </div>
-              <div className="h-[5px] w-full bg-slate-50">
+              {/* Updated: Progress bar colors */}
+              <div className="h-[5px] w-full bg-slate-50 dark:bg-white/5">
                 <div
-                  className="h-full bg-slate-600 transition-all duration-1000"
+                  className="h-full bg-slate-600 dark:bg-slate-400 transition-all duration-1000 group-hover:bg-blue-500 dark:group-hover:bg-blue-400"
                   style={{ width: skill.level }}
                 />
               </div>
