@@ -159,7 +159,7 @@ export default function HomePage() {
                 className="text-4xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight transition-colors duration-500"
               >
                 Hello, I'm <br className="hidden lg:block" />
-                <span className="text-slate-400 dark:text-slate-600 font-light italic">
+                <span className="text-slate-400 dark:text-slate-600 font-semibold italic">
                   Tep Panhasak
                 </span>
               </motion.h1>
