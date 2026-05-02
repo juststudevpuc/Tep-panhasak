@@ -156,10 +156,10 @@ export default function HomePage() {
 
               <motion.h1
                 variants={itemVariants}
-                className="text-4xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight transition-colors duration-500"
+                className="text-4xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-400 leading-tight transition-colors duration-500"
               >
                 Hello, I'm <br className="hidden lg:block" />
-                <span className="text-slate-400 dark:text-slate-600 font-semibold italic">
+                <span className="text-slate-400 dark:text-slate-200 font-semibold italic">
                   Tep Panhasak
                 </span>
               </motion.h1>
@@ -167,7 +167,7 @@ export default function HomePage() {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed font-normal max-w-xl transition-colors duration-500"
+              className="text-lg md:text-xl text-slate-600 dark:text-slate-100 leading-relaxed font-normal max-w-xl transition-colors duration-500"
             >
               Motivated and hardworking Third-year Computer Science student with
               practical experience in frontend and backend development. Skilled
