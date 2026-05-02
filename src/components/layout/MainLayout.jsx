@@ -155,16 +155,16 @@ export const MainLayout = () => {
 
       {/* 4. Footer - Cleaned up and integrated border */}
       <footer className="w-full bg-gray-300 dark:bg-[#0a0a0b] py-12 border-t border-slate-200/50 dark:border-white/5 transition-colors duration-500">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center gap-6 text-[10px] uppercase tracking-[0.3em] text-slate-400 dark:text-slate-500">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center gap-6 text-[10px] uppercase tracking-[0.3em] text-slate-800 dark:text-slate-800">
           <div className="flex flex-wrap justify-center gap-8 font-bold">
             <Link
-              to="#"
+              to="/"
               className="hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              to="#"
+              to="/"
               className="hover:text-slate-900 dark:hover:text-white transition-colors"
             >
               Terms of Service
