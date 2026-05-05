@@ -23,6 +23,7 @@ export const MainLayout = () => {
   const nav_item = [
     { to: "/homePage", label: "Home" },
     { to: "/aboutPage", label: "About" },
+    { to: "/awardPage", label: "Achievements" },
     { to: "/skillPage", label: "Skills" },
     { to: "/projectPage", label: "Project" },
     { to: "/contactPage", label: "Contact" },

@@ -7,6 +7,7 @@ import SkillPage from "./pages/SkillPage";
 import ProjectPage from "./pages/ProjectPage";
 import ContactPage from "./pages/ContactPage";
 import { ThemeProvider } from "./context/ThemeContext";
+import AwardPage from "./pages/AwardPage";
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
             <Route path="skillPage" element={<SkillPage />} />
             <Route path="projectPage" element={<ProjectPage />} />
             <Route path="contactPage" element={<ContactPage />} />
+            <Route path="awardPage" element={<AwardPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
