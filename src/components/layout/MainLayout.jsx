@@ -1,13 +1,13 @@
 import { Dialog, DialogPanel, PopoverGroup } from "@headlessui/react";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import React, { useState, useEffect } from "react";
-import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { Link, Outlet,  useLocation } from "react-router-dom";
 import { useTheme } from "@/context/ThemeContext";
 import { AnimatePresence } from "framer-motion";
 
 export const MainLayout = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const location = useLocation();
   // ADD THIS FIX: Scroll to top whenever the URL path changes
